@@ -1,11 +1,11 @@
 {
-  "name": "base-2014-dev",
-  "version": "1.0.0",
-  "homepage": "https://github.com/bolt/base-2014",
+  "name": "prexpo",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ellsclytn/Industry-Expo",
   "authors": [
-    "bobdenotter <bob@twokings.nl>"
+    "Ellis Clayton <ellis@ellisclayton.info>"
   ],
-  "description": "Base 2014 theme for Bolt",
+  "description": "Industry Project Expo theme for Bolt",
   "main": "index.twig",
   "keywords": [
     "twig",
@@ -21,6 +21,5 @@
     "tests"
   ],
   "dependencies": {
-    "foundation": "~5.2.2"
   }
 }
