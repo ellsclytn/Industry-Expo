@@ -4,31 +4,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    {% if record.title is defined %}{{ record.title|striptags }} | {% endif %} {{ app.config.get('general/sitename') }}
-  </title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+  <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %} {{ app.config.get('general/sitename') }}</title>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
   <link rel="stylesheet" href="{{ paths.theme }}css/style.css">
 </head>
 
 <body>
   <header>
-    <div class="brand-wrapper">
-      <div class="brand-bar container pure-g">
-        <div class="pure-u-lg-1">
-          <h1>{{ app.config.get('general/sitename') }}</h1>
+
+    <div class="brand-bar">
+      <div class="container">
+        <div class="brand">
+          <!-- TODO: SVG Logo -->
+
+        </div>
+        <div class="site-title">
           <h1>{{ app.config.get('general/sitename') }}</h1>
         </div>
       </div>
     </div>
-    <div class="nav-wrapper">
-      <nav class="container">
-        <ul>
+
+    <nav>
+      <div class="container">
+        <ul class="navigation" role="navigation">
           {{ menu() }}
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
+
   </header>
+
   <div class="pure-g">
     <div class="pure-u-1">
+      <div class="container">

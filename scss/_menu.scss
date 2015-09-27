@@ -5,43 +5,56 @@
  *
  */
 
-.brand-wrapper {
+.brand-bar {
   background-color: $red;
-
-  .brand-bar {
-    div {
-      h1 {
-        display: inline-block;
-        margin: auto 0;
-        padding: 21px 15px;
-      }
-    }
+  h1 {
+    margin: 0;
   }
 }
 
-.nav-wrapper {
+.site-title {
+  padding: 20px 0;
+  color: $white;
+  display: inline-block;
+}
+
+// TODO: Will be replaced with SVG Code, demo purposes only
+.brand {
+  background-color: darken($red, 20%);
+  float: left;
+  width: 180px;
+  height: 77px;
+  border-right: 3px solid darken($red, 10%);
+  margin-right: 20px;
+}
+
+nav {
   background-color: $white;
+}
 
-  nav {
-    ul {
-      margin: 0;
-      padding: 0;
+.navigation {
+  margin: 0;
+  padding: 0;
 
-      li {
-        display: inline;
+  li {
+    display: inline;
 
-        a {
-          text-decoration: none;
-          color: $black;
-          padding: 20px 15px;
-          border-bottom: 3px solid transparent;
-          display: inline-block;
-        }
-      }
+    a {
+      font-weight: $semibold; 
+      text-decoration: none;
+      color: $black;
+      padding: 20px 15px;
+      border-bottom: 3px solid transparent;
+      display: inline-block;
+      // TODO: Mixin for transitions - _mixins.scss
+      transition: border-color 0.3s ease-in-out;
+      -webkit-transition: border-color 0.3s ease-in-out;
+    }
 
-      li:hover, li:active, li:focus {
-        border-bottom: 3px solid $red;
-      }
+    a:hover,
+    a:active,
+    a:focus {
+      border-bottom: 3px solid $red;
     }
   }
 }
