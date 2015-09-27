@@ -4,3 +4,44 @@
  * All menu/navigation related styles go here.
  *
  */
+
+.brand-wrapper {
+  background-color: $red;
+
+  .brand-bar {
+    div {
+      h1 {
+        display: inline-block;
+        margin: auto 0;
+        padding: 21px 15px;
+      }
+    }
+  }
+}
+
+.nav-wrapper {
+  background-color: $white;
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline;
+
+        a {
+          text-decoration: none;
+          color: $black;
+          padding: 20px 15px;
+          border-bottom: 3px solid transparent;
+          display: inline-block;
+        }
+      }
+
+      li:hover, li:active, li:focus {
+        border-bottom: 3px solid $red;
+      }
+    }
+  }
+}
