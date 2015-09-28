@@ -1,15 +1,9 @@
 {% include '_header.twig' %}
   {% if record is defined %}
     {% set home = record %}
-    {% if home.teaser is defined and home.teaser is not empty %}
-      <h1>{{ home.teaser }}</h1>
-    {% else %}
-      <h1>Showcasing the work of final year ICT students.</h1>
-    {% endif %}
+    <h1>{{ home.teaser }}</h1>
 
-    {% if home.body is defined and home.body is not empty %}
-      <p>{{ home.body() }}</p>
-    {% endif %}
+    <p>{{ home.templatefields.about_intro }}</p>
 
     {# Tip: If you're curious what all of the available fields of this
       record contain, just use {{ print(home) }}, to print it all. #}
