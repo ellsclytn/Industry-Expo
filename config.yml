@@ -1,0 +1,52 @@
+# Optional config file for the theme.
+# Rename this file to config.yml, and it won't get overwritten on subsequent updates.
+
+# Variables that are in this file, can be used in your twig template like {{ theme.foo }}
+# Note: If variables do not immediately show up, clear the cache, in the Bolt Backend.
+
+templatefields:
+  index.twig:
+    about_intro:
+      type: text
+    about:
+      type: html
+    who_coming_title:
+      type: text
+    who_coming:
+      type: html
+    benefits_title:
+      type: text
+    benefits:
+      type: html
+    date_time_title:
+      type: text
+    date_time:
+      type: html
+    view_projects:
+      type: text
+    location_title:
+      type: text
+    location_description:
+      type: html
+    campus_info_title:
+      type: text
+    campus_info:
+      type: html
+    parking_title:
+      type: text
+    parking:
+      type: html
+    more_info_title:
+      type: text
+    more_info:
+      type: html
+    address:
+      type: text
+    contact_title:
+      type: text
+    contact_description:
+      type: html
+    important_people_title:
+      type: title
+    important_people:
+      type: html
