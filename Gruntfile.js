@@ -2,33 +2,40 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    sass: {
-      options: {
-        includePaths: ['bower_components/foundation/scss']
-      },
+    compass: {
       dist: {
         options: {
-          outputStyle: 'compressed'
-        },
-        files: {
-          'css/style.css': 'scss/importer.scss'
+          sassDir: 'scss',
+          cssDir: 'css',
+          environment: 'production'
         }
-      }
+      },
     },
 
     watch: {
-      grunt: { files: ['Gruntfile.js'] },
-
-      sass: {
+      compass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['compass']
+      }
+    },
+
+    browserSync: {
+      bsFiles: {
+        src: ['css/*.css', '*.twig']
+      },
+      options: {
+        watchTask: true,
+        proxy: "boltcms.local"
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-sass');
+  // Load Tasks
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['build','watch']);
+  // Register Tasks
+  grunt.registerTask('build', ['compass']);
+  grunt.registerTask('default', ['build', 'browserSync', 'watch']);
 }
