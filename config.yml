@@ -46,7 +46,3 @@ templatefields:
       type: text
     contact_description:
       type: html
-    important_people_title:
-      type: title
-    important_people:
-      type: html
