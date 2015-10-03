@@ -4,3 +4,62 @@
  * All page related styles go here.
  *
  */
+
+.section-centered {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.masthead {
+  display: table;
+  height: 80vh;
+  width: 100%;
+  background-color: $red;
+  background-image: url("/theme/industry-expo/images/masthead.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  // TODO: Media queries
+  h2, h3 {
+    padding: 4rem;
+    margin-bottom: 0;
+    background-color: transparentize($red, 0.2);
+    color: $white;
+  }
+
+  h2 {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 3rem;
+
+    @media (min-width: $media-md) {
+      margin-left: 0;
+      font-size: 5rem;
+    }
+  }
+
+  h3 {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-bottom: 3rem;
+    background-color: transparentize($blue, 0.2);
+    font-size: 1.8rem;
+    text-align: center;
+
+    i {
+      margin-top: 2rem;
+    }
+
+    @media (min-width: $media-md) {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+  }
+}

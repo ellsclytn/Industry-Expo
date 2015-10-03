@@ -6,19 +6,23 @@
  */
 
 // Colors
-$black:     rgb(30, 30, 30);
-$blue:      rgb(0, 126, 182);
-$grey:      rgb(102, 102, 102);
-$imgblue:   rgba(0, 126, 182, 0.8);
-$imgred:    rgba(217, 35, 52, 0.8);
-$offwhite:  rgb(240, 240, 240);
 $red:       rgb(192, 36, 36);
-$redaccent: rgb(168, 29, 30);
+$blue:      rgb(0, 126, 182);
+$black:     rgb(30, 30, 30);
+$grey:      rgb(102, 102, 102);
+$offwhite:  rgb(240, 240, 240);
 $white:     rgb(255, 255, 255);
-
+$dark-blue: darken($blue, 10%);
+$dark-red:  darken($red, 10%);
 
 // Type
-
 $regular: 400;
 $semibold: 600;
 $bold: 700;
+
+
+// Pure CSS Media Queries
+$media-sm : 35.5em;
+$media-md : 48em;
+$media-lg : 64em;
+$media-xl : 80em;

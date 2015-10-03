@@ -10,13 +10,17 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
   font-weight: 400;
   font-size: 1.5em;
   line-height: 1.6;
   strong {
     font-weight: 600;
   }
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

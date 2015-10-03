@@ -27,13 +27,13 @@ $menu-height: 8rem;
   float: left;
   display: block;
   height: $menu-height;
-  border-right: 1px solid darken($red, 10%);
-  margin-right: 20px;
+  border-right: 1px solid $dark-red;
+  margin-right: 2rem;
 }
 
 .logo {
   height: $menu-height / 2;
-  margin: 20px 20px 20px 0;
+  margin: 2rem 2rem 2rem 0;
   fill: $white;
 }
 
@@ -65,7 +65,7 @@ nav {
       font-weight: $semibold;
       text-decoration: none;
       color: $black;
-      padding: 20px 15px;
+      padding: 2rem 1.5rem;
       border-bottom: 3px solid transparent;
       display: inline-block;
       // TODO: Mixin for transitions - _mixins.scss
@@ -91,7 +91,7 @@ nav {
 }
 
 .nav-socials {
-  padding: 28px 0;
+  padding: 2.8rem 0;
   float: right;
   a {
     display: inline-block;
