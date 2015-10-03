@@ -17,3 +17,7 @@ This is the Industry Project Expo theme for [Bolt CMS](https://bolt.cm), based o
     * This runs `bower install` for you!
 5. Set `theme: industry-expo` in `app/config/config.yml`
 6. Start grunt: `grunt`
+
+### Browser Sync
+
+The Browser Sync grunt task assumes that the host `boltcms.local` (<http://boltcms.local>) is used to access the Bolt CMS installation, make the necessary change in your hosts file for this to work properly. Without this auto page refresh won't work!
