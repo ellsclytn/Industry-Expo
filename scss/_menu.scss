@@ -32,8 +32,8 @@ $menu-height: 8rem;
 }
 
 .logo {
-  height: $menu-height;
-  padding: 20px 20px 20px 0;
+  height: $menu-height / 2;
+  margin: 20px 20px 20px 0;
   fill: $white;
 }
 
