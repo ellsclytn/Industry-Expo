@@ -5,27 +5,36 @@
  *
  */
 
+$menu-height: 8rem;
 .brand-bar {
   background-color: $red;
+  height: $menu-height;
   h1 {
     margin: 0;
   }
 }
 
 .site-title {
-  padding: 20px 0;
   color: $white;
   display: inline-block;
+  h1 {
+    font-size: 3rem;
+    line-height: $menu-height;
+  }
 }
 
-// TODO: Will be replaced with SVG Code, demo purposes only
 .brand {
-  background-color: darken($red, 20%);
   float: left;
-  width: 180px;
-  height: 77px;
-  border-right: 3px solid darken($red, 10%);
+  display: block;
+  height: $menu-height;
+  border-right: 1px solid darken($red, 10%);
   margin-right: 20px;
+}
+
+.logo {
+  height: $menu-height;
+  padding: 20px 20px 20px 0;
+  fill: $white;
 }
 
 nav {
@@ -38,6 +47,19 @@ nav {
 
   li {
     display: inline;
+    position: relative;
+
+    // Hover menu links, grow underline
+    &.active a::after,
+    &.active a::before,
+    a:hover::after,
+    a:hover::before,
+    a:active::after,
+    a:active::before,
+    a:focus::after,
+    a:focus::before {
+      width: 50%;
+    }
 
     a {
       font-weight: $semibold;
@@ -49,12 +71,32 @@ nav {
       // TODO: Mixin for transitions - _mixins.scss
       transition: border-color 0.3s ease-in-out;
       -webkit-transition: border-color 0.3s ease-in-out;
-    }
 
-    a:hover,
-    a:active,
-    a:focus {
-      border-bottom: 3px solid $red;
+      // Material underlines
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: $red;
+        bottom: -26px;
+        transition: width 0.1s ease-in-out;
+        -webkit-transition: width 0.1s ease-in-out;
+      }
+      &::after { left: 50%; }
+      &::before { right: 50%; }
     }
+  }
+}
+
+.nav-socials {
+  padding: 28px 0;
+  float: right;
+  a {
+    display: inline-block;
+    margin-left: 20px;
+    color: $white;
+    text-decoration: none;
   }
 }

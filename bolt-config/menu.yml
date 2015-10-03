@@ -2,14 +2,19 @@
 # details: http://docs.bolt.cm/menus
 main:
     - label: Home
-      title: This is the first menu item.
+      title: Title of home section
       path: homepage
-    - label: Second item
-      path: entry/1
-    - label: All pages
+    - label: About
+      title: Title of about section
+      link: '#about'
+    - label: Projects
+      title: 2015 Projects
       path: pages/
-    - label: The Bolt site
-      link: http://bolt.cm
+    - label: Location
+      title: Title of location section
+      link: '#location'
+    - label: Contact
+      link: '#contact'
 footer:
     - label: Yes
       title: This is the first menu item.
