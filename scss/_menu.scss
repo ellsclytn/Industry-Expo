@@ -68,9 +68,7 @@ nav {
       padding: 2rem 1.5rem;
       border-bottom: 3px solid transparent;
       display: inline-block;
-      // TODO: Mixin for transitions - _mixins.scss
-      transition: border-color 0.3s ease-in-out;
-      -webkit-transition: border-color 0.3s ease-in-out;
+      @include transition(border-color 0.3s ease-in-out);
 
       // Material underlines
       &::after,
