@@ -1,0 +1,22 @@
+{% include '_header.twig' %}
+<div class="pure-g" role="content">
+  {% for project in records %}
+    {% if (loop.first) or (loop.index == 7) %}
+      <div class="pure-u-1 pure-u-md-1-2">
+    {% endif %}
+        <article>
+          <h1>
+            <a href="{{ project.link }}">{{ project.project_name }}</a>
+          </h1>
+          <div class="large-4 imageholder">
+            <img src="{{ image(project.team_photo) }}">
+          </div>
+          <p>{{ project.excerpt(300) }}</p>
+        </article>
+    {% if (loop.index == 6) or (loop.last) %}
+      </div>
+    {% endif %}
+  {% endfor %}
+  {{ pager() }}
+</div>
+{% include '_footer.twig' %}
