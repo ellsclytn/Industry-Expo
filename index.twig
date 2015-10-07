@@ -5,21 +5,23 @@
       <div class="container">
         <div class="flex-container">
           <div class="flex-item message">
-            <h2>{{ app.config.get('general/payoff') }}</h2>
+            <h1>{{ app.config.get('general/payoff') }}</h1>
           </div>
           <div class="flex-item button">
-            <h3>{{ home.templatefields.about_intro }}</h3>
-            <i class="fa fa-angle-down"></i>
+            <h2>{{ home.templatefields.about_intro }}</h2>
+            <i class="fa fa-angle-down arrow-down"></i>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="teaser">
-      <h1>{{ home.teaser }}</h1>
-      <p>{{ home.templatefields.about_intro }}</p>
-    </div>
-
+    <a id="#about" name="about"></a>
+    <section class="about">
+      <div class="container">
+        <h2>{{ home.templatefields.about_intro }}</h2>
+        {{ home.templatefields.about }}
+      </div>
+    </section>
 
     <div>
       <h1>{{ home.templatefields.about_intro }}</h1>

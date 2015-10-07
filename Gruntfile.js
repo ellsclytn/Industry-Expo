@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
+          require: ['modular-scale'],
           sassDir: 'scss',
           cssDir: 'css',
           environment: 'production'

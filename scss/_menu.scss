@@ -5,7 +5,7 @@
  *
  */
 
-$menu-height: 8rem;
+$menu-height: 80px;
 .brand-bar {
   background-color: $red;
   height: $menu-height;
@@ -15,10 +15,10 @@ $menu-height: 8rem;
 }
 
 .site-title {
-  color: $white;
   display: inline-block;
   h1 {
-    font-size: 3rem;
+    color: $white;
+    font-size: 30px;
     line-height: $menu-height;
   }
 }
@@ -28,12 +28,12 @@ $menu-height: 8rem;
   display: block;
   height: $menu-height;
   border-right: 1px solid $dark-red;
-  margin-right: 2rem;
+  margin-right: 20px;
 }
 
 .logo {
   height: $menu-height / 2;
-  margin: 2rem 2rem 2rem 0;
+  margin: 20px 20px 20px 0;
   fill: $white;
 }
 
@@ -65,7 +65,7 @@ nav {
       font-weight: $semibold;
       text-decoration: none;
       color: $black;
-      padding: 2rem 1.5rem;
+      padding: 20px 15px;
       border-bottom: 3px solid transparent;
       display: inline-block;
       @include transition(border-color 0.3s ease-in-out);
