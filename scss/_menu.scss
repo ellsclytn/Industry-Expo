@@ -68,7 +68,6 @@ nav {
       padding: 20px 15px;
       border-bottom: 3px solid transparent;
       display: inline-block;
-      @include transition(border-color 0.3s ease-in-out);
 
       // Material underlines
       &::after,
@@ -79,8 +78,7 @@ nav {
         height: 2px;
         background-color: $red;
         bottom: -26px;
-        transition: width 0.1s ease-in-out;
-        -webkit-transition: width 0.1s ease-in-out;
+        @include transition(width 0.1s ease-in-out);
       }
       &::after { left: 50%; }
       &::before { right: 50%; }

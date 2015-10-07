@@ -4,3 +4,41 @@
  * All button related styles go here.
  *
  */
+button,
+.button {
+  background-color: $red;
+  padding: 20px 40px;
+  color: $white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  @include transition-property(color background-color);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease-in-out);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $dark-red;
+  }
+}
+
+.button-projects {
+  display: block;
+  position: relative;
+  background-color: $dark-blue;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $red;
+  }
+
+  // Custom margin based on screen size
+  @media (min-width: $media-md) {
+    margin: 0 130px;
+  }
+
+  @media (min-width: $media-lg) {
+    margin: 0 260px;
+  }
+}
