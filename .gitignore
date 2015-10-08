@@ -3,3 +3,4 @@ node_modules
 css
 npm-debug.log
 .sass-cache/
+.DS_Store
