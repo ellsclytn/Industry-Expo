@@ -15,24 +15,3 @@ main:
       link: '#location'
     - label: Contact
       link: '#contact'
-footer:
-    - label: Yes
-      title: This is the first menu item.
-      path: homepage
-    - label: No
-      path: entry/1
-    - label: Definitely
-      path: pages/
-    - label: Possibly
-      link: http://bolt.cm
-content_credit:
-    - label: Lewis Carter
-      link: https://docs.bolt.cm/menus
-design_credit:
-    - label: Jack Cuthbert
-      link: https://docs.bolt.cm/menus
-dev_credit:
-    - label: Ellis Clayton
-      link: https://docs.bolt.cm/menus
-    - label: Craig Hayward
-      link: https://docs.bolt.cm/menus

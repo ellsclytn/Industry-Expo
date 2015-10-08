@@ -1,0 +1,111 @@
+.footer {
+  background-color: $black;
+  padding: 60px 0;
+
+  @media (min-width: $media-sm) {
+    text-align: center;
+  }
+}
+
+.footer-logo {
+  max-width: 200px;
+  fill: darken($white, 60%);
+  margin-bottom: 40px;
+}
+
+.footer-socials {
+  padding: 100px 0;
+  background-color: $red;
+
+  @media (min-width: $media-sm) {
+    text-align: center;
+  }
+
+  p {
+    color: $white;
+  }
+
+  .fa {
+    font-size: ms(5);
+    color: $white;
+  }
+}
+
+.footer-social-icon {
+  display: inline-block;
+  background-color: $dark-red;
+  padding: 40px;
+  @include transition(background-color 0.1s ease-in-out);
+  &.facebook:hover,
+  &.facebook:active,
+  &.facebook:focus {
+    background-color: #3b5998;
+  }
+
+  &.instagram:hover,
+  &.instagram:active,
+  &.instagram:focus {
+    background-color: #3f729b;
+  }
+
+  &.twitter:hover,
+  &.twitter:active,
+  &.twitter:focus {
+    background-color: #55acee;
+  }
+}
+
+.footer-credit {
+  background-color: darken($black, 3%);
+}
+
+.footer-page-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+
+    @media (min-width: $media-sm) {
+      margin: 0 40px;
+    }
+  }
+
+  a {
+    color: darken($white, 20%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+.copyright, .credit {
+  font-size: ms(-1);
+}
+
+.copyright {
+  @media (min-width: $media-sm) {
+    text-align: left;
+  }
+}
+
+.credit {
+  @media (min-width: $media-sm) {
+    text-align: right;
+  }
+
+  a {
+    color: darken($white, 20%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+    }
+  }
+}
