@@ -5,13 +5,14 @@
       <div class="pure-u-1 pure-u-md-1-2">
     {% endif %}
         <article>
-          <h1>
-            <a href="{{ project.link }}">{{ project.project_name }}</a>
-          </h1>
-          <div class="large-4 imageholder">
+          <div class="image-wrapper">
+            <h1>{{ project.team_name }}</h1>
             <img src="{{ image(project.team_photo) }}">
+            <h1>{{ project.project_name }}</h1>
+            <h2>{{ project.client }}</h2>
           </div>
-          <p>{{ project.excerpt(300) }}</p>
+          {{ project.summary }}
+          <a href="{{ project.link }}" class="button">View Project</a>
         </article>
     {% if (loop.index == 6) or (loop.last) %}
       </div>
