@@ -47,7 +47,9 @@ h6 { font-size: ms(0); }
 
 // Specific type sizes throughout site
 .masthead h2 { font-size: ms(0); }
-.about p { font-size: ms(0); }
+.about p,
+.location > .container > p,
+.contact p  { font-size: ms(0); }
 .details-icon { font-size: ms(6); }
 .button-projects { font-size: ms(1); }
 
@@ -59,8 +61,11 @@ h6 { font-size: ms(0); }
   h5 { font-size: ms(0); }
   h6 { font-size: ms(0); }
 
+  // Specific type sizes throughout site
   .masthead h2 { font-size: ms(1); }
-  .about p { font-size: ms(1); }
+  .about p,
+  .location > .container > p,
+  .contact p { font-size: ms(1); }
   .button-projects { font-size: ms(2); }
 }
 

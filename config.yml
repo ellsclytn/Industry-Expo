@@ -28,6 +28,10 @@ templatefields:
       type: text
     location_description:
       type: html
+    event_location_title:
+      type: text
+    event_location:
+      type: html
     campus_info_title:
       type: text
     campus_info:

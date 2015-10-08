@@ -18,7 +18,9 @@ button,
   &:hover,
   &:active,
   &:focus {
+    color: $white;
     background-color: $dark-red;
+    text-decoration: none;
   }
 }
 
@@ -30,6 +32,7 @@ button,
   &:hover,
   &:active,
   &:focus {
+    color: $white;
     background-color: $red;
   }
 

@@ -51,36 +51,62 @@
         <a class="button button-projects" href="/projects">{{ home.templatefields.view_projects }}</a>
       </div>
     </section>
-<!--
-    <div class="location">
-      <h1>{{ home.templatefields.location_title }}</h1>
-      <p>{{ home.templatefields.location_description }}</p>
-      <div class="pure-g">
-        <div class="pure-u-1 pure-u-md-1-2">
-          <h2>{{ home.templatefields.campus_info_title }}</h2>
-          <p>{{ home.templatefields.campus_info }}</p>
+
+
+    <section class="location">
+      <div class="container">
+        <h2>{{ home.templatefields.location_title }}</h2>
+        {{ home.templatefields.location_description }}
+
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-2">
+            <h3>{{ home.templatefields.event_location_title }}</h3>
+            {{ home.templatefields.event_location }}
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2">
+            <h3>{{ home.templatefields.campus_info_title }}</h3>
+            {{ home.templatefields.campus_info }}
+          </div>
         </div>
-        <div class="pure-u-1 pure-u-md-1-2">
-          <h2>{{ home.templatefields.parking_title }}</h2>
-          <p>{{ home.templatefields.parking }}</p>
+
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-2">
+            <h3>{{ home.templatefields.parking_title }}</h3>
+            {{ home.templatefields.parking }}
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2">
+            <h3>{{ home.templatefields.more_info_title }}</h3>
+            {{ home.templatefields.more_info }}
+          </div>
         </div>
       </div>
-      <div class="pure-g">
-        <div class="pure-u-1 pure-u-md-1-2">
-          <h2>{{ home.templatefields.more_info_title }}</h2>
-          <p>{{ home.templatefields.more_info }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="map">
+    </section>
+
+    <section class="map">
+
+      {# TODO: Google custom map #}
+
       <div class="address">
-        <p>{{ home.templatefields.address }}</p>
+        <div class="container">
+          <p>{{ home.templatefields.address }}</p>
+        </div>
       </div>
-    </div>
-    <div class="contact">
-      <h1>{{ home.templatefields.contact_title }}</h1>
-      <p>{{ home.templatefields.contact_description }}</p>
-    </div> -->
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="pure-g">
+          {# Offset col #}
+          <div class="pure-u-1 pure-u-md-1-4"></div>
+            <div class="pure-u-1 pure-u-md-6-8">
+            <h2>{{ home.templatefields.contact_title }}</h2>
+            {{ home.templatefields.contact_description }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
   {% else %}
     <p>
       {{ __('Content for home not found!') }}
