@@ -6,7 +6,7 @@ This is the Industry Project Expo theme for [Bolt CMS](https://bolt.cm), based o
 
 * [Node.js](https://nodejs.org/en/) and [Ruby](https://www.ruby-lang.org/en/) installed.
 * Grunt and bower: `npm install bower grunt-cli -g`
-* Compass: `gem install compass`
+* Compass & Modular Scale: `gem install compass modular-scale`
 
 ## Installation
 
