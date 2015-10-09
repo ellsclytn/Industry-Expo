@@ -1,5 +1,6 @@
 .project {
-  border: 1px solid black;
+  border: 1px solid $offwhite;
+  margin: 20px; //Jack has a fix apparently
 
   h1, h2 {
     margin: 0;
@@ -7,20 +8,57 @@
 
   .image-wrapper {
     position: relative;
+    overflow-y: hidden;
+
+    .team-name {
+      background-color: transparentize($blue, 0.2);
+    }
+
+    h4, p {
+      color: $white;
+      margin: 20px;
+    }
+
     .team-name {
       position: absolute;
       top: 0;
       right: 0;
+
+      p {
+        margin: 10px;
+      }
+    }
+
+    .overlay-low {
+      position: absolute;
+      bottom: 0;
+
+      h4 {
+        margin-bottom: 0;
+      }
+      p {
+        margin-top: 10px;
+      }
     }
 
     img {
+      position: relative;
       z-index: -1;
+      width: 100%;
+      height: auto;
     }
   }
 
-  img {
-    position: absolute;
-    width: 100%;
-    height: auto;
+  .content {
+    padding: 0 20px 20px 20px;
+
+    p {
+      margin-top: 5px;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+    }
   }
 }

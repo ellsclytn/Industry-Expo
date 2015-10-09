@@ -1,6 +1,6 @@
 {% include '_header.twig' %}
 <div class="container">
-  <div class="pure-g" role="content">
+  <div class="pure-g project-column" role="content">
     {% for project in records %}
       {% if (loop.first) or (loop.index == 7) %}
         <div class="pure-u-1 pure-u-md-1-2">
@@ -8,14 +8,18 @@
           <article class="project">
             <div class="image-wrapper">
               <div class="team-name">
-                <h1>{{ project.team_name }}</h1>
+                <p>{{ project.team_name }}</p>
               </div>
               <img src="{{ image(project.team_photo) }}">
-              <h1 class="project-name">{{ project.project_name }}</h1>
-              <h2>{{ project.client }}</h2>
+              <div class="overlay-low">
+                <h4 class="project-name">{{ project.project_name }}</h4>
+                <p>{{ project.client }}</p>
+              </div>
             </div>
-            {{ project.summary }}
-            <a href="{{ project.link }}" class="button">View Project</a>
+            <div class="content">
+              {{ project.summary }}
+              <a href="{{ project.link }}" class="button">View Project</a>
+            </div>
           </article>
       {% if (loop.index == 6) or (loop.last) %}
         </div>
