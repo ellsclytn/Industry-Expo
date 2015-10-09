@@ -34,3 +34,12 @@ a {
   padding: 0 20px;
   margin: 0 auto;
 }
+
+// Add proper column padding
+.pure-g {
+  margin: 0 -20px;
+}
+
+.pure-g [class *= "pure-u"] {
+  padding: 0 20px;
+}
