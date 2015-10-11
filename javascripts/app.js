@@ -207,7 +207,13 @@ function initMap() {
       }
     });
 
+    var marker = new google.maps.Marker({
+      position: location,
+      title: 'Red Zone'
+    });
+
     map.mapTypes.set('grifMap', grifMap);
     map.setMapTypeId('grifMap');
+    marker.setMap(map);
   }
 }
