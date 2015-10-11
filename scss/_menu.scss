@@ -5,10 +5,9 @@
  *
  */
 
-$menu-height: 80px;
 .brand-bar {
   background-color: $red;
-  height: $menu-height;
+  height: 50px;
   h1 {
     margin: 0;
   }
@@ -18,51 +17,238 @@ $menu-height: 80px;
   display: inline-block;
   h1 {
     color: $white;
-    font-size: 30px;
-    line-height: $menu-height;
+    font-size: ms(0);
+    line-height: 50px;
   }
 }
 
 .brand {
   float: left;
   display: block;
-  height: $menu-height;
+  height: 50px;
   border-right: 1px solid $dark-red;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .logo {
-  height: $menu-height / 2;
-  margin: 20px 20px 20px 0;
+  height: 30px;
+  margin: 10px 10px 10px 0;
   fill: $white;
 }
 
+.menu-button {
+  position: fixed;
+  z-index: 100;
+  bottom: 20px;
+  left: 20px;
+  padding: 23px 20px;
+  background-color: $red;
+  opacity: 1;
+  visibility: visible;
+  @include transition-property(box-shadow background-color transform opacity visibility left);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease-in-out);
+  @include border-radius(50%);
+  @include box-shadow(0px 2px 5px transparentize($black, 0.8));
+  @include scale(1);
+
+  & span {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: $white;
+    margin-bottom: 4px;
+    top: 1px;
+    opacity: 1;
+    @include selection(none, none);
+    @include transition-property(transform opacity);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-in-out);
+  }
+
+  & span:nth-child(3) {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    @include box-shadow(0px 5px 10px transparentize($black, 0.8));
+  }
+}
+
+.site-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: transparentize($black, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  @include transition-property(visibility opacity);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease-in-out);
+}
+
 nav {
-  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: -90%;
+  width: 90%;
+  max-width: 300px;
+  height: 100%;
+  z-index: 20;
+  background-color: $offwhite;
+  overflow-y: scroll;
+  @include transition(left 0.3s ease-in-out);
+}
+
+.nav-header {
+  padding: 20px;
+  background-color: $red;
+  margin-bottom: 20px;
+  h1 {
+    color: $white;
+    font-size: ms(2);
+    margin-bottom: 0;
+  }
+}
+
+.nav-header-logo {
+  width: 50%;
+  fill: $white;
 }
 
 .navigation {
-  margin: 0;
+  margin: 0 0 80px;
   padding: 0;
+  list-style-type: none;
 
-  li {
-    display: inline;
+  & > li {
+
+  }
+
+  .active a {
+    background-color: darken($offwhite, 10%);
+    border-left: 3px solid $red;
+  }
+
+  & > li > a {
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    display: block;
+    color: $black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      background-color: darken($offwhite, 10%);
+    }
+  }
+}
+
+// When the menu-open class is on body...
+.menu-open {
+  overflow-y: hidden;
+
+  nav {
+    left: 0;
+  }
+
+  .site-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu-button {
+    left: 300px - 80px;
+    & span:nth-child(1){
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+    & span:nth-child(2){
+      opacity: 0;
+    }
+    & span:nth-child(3){
+      transform: rotate(-45deg) translate(4px, -4px);
+    }
+  }
+}
+
+@media (min-width: $media-sm) {
+  .site-title h1 {
+    font-size: ms(1);
+  }
+}
+
+@media (min-width: $media-md) {
+  .site-overlay {
+    display: none;
+  }
+
+  .brand,
+  .brand-bar {
+    height: 80px;
+  }
+
+  .brand {
+    margin-right: 20px;
+  }
+
+  .site-title h1 {
+    font-size: ms(2);
+    margin: 15px 0;
+  }
+
+  .logo {
+    height: 40px;
+    margin: 20px 20px 20px 0;
+  }
+
+  nav {
     position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: $white;
+    overflow: hidden;
 
-    // Hover menu links, grow underline
-    &.active a::after,
-    &.active a::before,
-    a:hover::after,
-    a:hover::before,
-    a:active::after,
-    a:active::before,
-    a:focus::after,
-    a:focus::before {
-      width: 50%;
+    // Same as .container
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .nav-header {
+    display: none;
+  }
+
+  .navigation {
+    margin: 0;
+
+    .active a {
+      border-left: none;
+      background-color: transparent;
     }
 
-    a {
-      font-weight: $semibold;
+    & > li {
+      display: inline-block;
+
+      & > a:hover,
+      & > a:focus,
+      & > a:active {
+        background-color: transparent;
+      }
+    }
+
+    & > li > a {
       text-decoration: none;
       color: $black;
       padding: 20px 15px;
@@ -83,5 +269,23 @@ nav {
       &::after { left: 50%; }
       &::before { right: 50%; }
     }
+
+    // Hover menu links, grow underline
+    .active a::after,
+    .active a::before,
+    a:hover::after,
+    a:hover::before,
+    a:active::after,
+    a:active::before,
+    a:focus::after,
+    a:focus::before {
+      width: 49%;
+    }
+  }
+
+  .menu-button {
+    @include scale(0);
+    visibility: hidden;
+    opacity: 0;
   }
 }

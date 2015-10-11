@@ -41,7 +41,7 @@ module.exports = function(grunt) {
     // Browser Sync task to automatically refresh the page on any changes that affect appearance.
     browserSync: {
       bsFiles: {
-        src: ['css/*.css', '*.twig', '../../app/config/*.yml']
+        src: ['javascripts/*.js', 'css/*.css', '*.twig', '../../app/config/*.yml']
       },
       options: {
         watchTask: true,
