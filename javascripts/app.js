@@ -8,7 +8,7 @@ $(document).ready(function() {
   });
 
   // Open/close menu
-  $('.menu-button').click(function() {
+  $('.menu-button, .site-overlay').click(function() {
     $('body').toggleClass('menu-open');
   });
 });

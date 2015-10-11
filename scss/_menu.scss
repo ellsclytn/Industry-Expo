@@ -5,10 +5,9 @@
  *
  */
 
-$menu-height: 80px;
 .brand-bar {
   background-color: $red;
-  height: $menu-height;
+  height: 50px;
   h1 {
     margin: 0;
   }
@@ -18,22 +17,22 @@ $menu-height: 80px;
   display: inline-block;
   h1 {
     color: $white;
-    font-size: 30px;
-    line-height: $menu-height;
+    font-size: ms(0);
+    line-height: 50px;
   }
 }
 
 .brand {
   float: left;
   display: block;
-  height: $menu-height;
+  height: 50px;
   border-right: 1px solid $dark-red;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .logo {
-  height: $menu-height / 2;
-  margin: 20px 20px 20px 0;
+  height: 30px;
+  margin: 10px 10px 10px 0;
   fill: $white;
 }
 
@@ -44,11 +43,14 @@ $menu-height: 80px;
   left: 20px;
   padding: 23px 20px;
   background-color: $red;
-  @include transition-property(box-shadow background-color);
+  opacity: 1;
+  visibility: visible;
+  @include transition-property(box-shadow background-color transform opacity visibility left);
   @include transition-duration(0.3s);
   @include transition-timing-function(ease-in-out);
   @include border-radius(50%);
   @include box-shadow(0px 2px 5px transparentize($black, 0.8));
+  @include scale(1);
 
   & span {
     position: relative;
@@ -101,6 +103,7 @@ nav {
   height: 100%;
   z-index: 20;
   background-color: $offwhite;
+  overflow-y: scroll;
   @include transition(left 0.3s ease-in-out);
 }
 
@@ -121,7 +124,7 @@ nav {
 }
 
 .navigation {
-  margin: 0;
+  margin: 0 0 80px;
   padding: 0;
   list-style-type: none;
 
@@ -153,6 +156,7 @@ nav {
 
 // When the menu-open class is on body...
 .menu-open {
+  overflow-y: hidden;
 
   nav {
     left: 0;
@@ -164,6 +168,7 @@ nav {
   }
 
   .menu-button {
+    left: 300px - 80px;
     & span:nth-child(1){
       transform: rotate(45deg) translate(4px, 4px);
     }
@@ -176,29 +181,74 @@ nav {
   }
 }
 
-/*
-.navigation {
-  margin: 0;
-  padding: 0;
+@media (min-width: $media-sm) {
+  .site-title h1 {
+    font-size: ms(1);
+  }
+}
 
-  li {
-    display: inline;
+@media (min-width: $media-md) {
+  .site-overlay {
+    display: none;
+  }
+
+  .brand,
+  .brand-bar {
+    height: 80px;
+  }
+
+  .brand {
+    margin-right: 20px;
+  }
+
+  .site-title h1 {
+    font-size: ms(2);
+    margin: 15px 0;
+  }
+
+  .logo {
+    height: 40px;
+    margin: 20px 20px 20px 0;
+  }
+
+  nav {
     position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: $white;
+    overflow: hidden;
 
-    // Hover menu links, grow underline
-    &.active a::after,
-    &.active a::before,
-    a:hover::after,
-    a:hover::before,
-    a:active::after,
-    a:active::before,
-    a:focus::after,
-    a:focus::before {
-      width: 50%;
+    // Same as .container
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .nav-header {
+    display: none;
+  }
+
+  .navigation {
+    margin: 0;
+
+    .active a {
+      border-left: none;
+      background-color: transparent;
     }
 
-    a {
-      font-weight: $semibold;
+    & > li {
+      display: inline-block;
+
+      & > a:hover,
+      & > a:focus,
+      & > a:active {
+        background-color: transparent;
+      }
+    }
+
+    & > li > a {
       text-decoration: none;
       color: $black;
       padding: 20px 15px;
@@ -219,6 +269,23 @@ nav {
       &::after { left: 50%; }
       &::before { right: 50%; }
     }
+
+    // Hover menu links, grow underline
+    .active a::after,
+    .active a::before,
+    a:hover::after,
+    a:hover::before,
+    a:active::after,
+    a:active::before,
+    a:focus::after,
+    a:focus::before {
+      width: 49%;
+    }
+  }
+
+  .menu-button {
+    @include scale(0);
+    visibility: hidden;
+    opacity: 0;
   }
 }
-*/
