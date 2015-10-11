@@ -165,5 +165,8 @@ section.map {
 
 section.contact {
   padding: 100px 0;
-  text-align: center;
+
+  @media (min-width: $media-md) {
+    text-align: center;
+  }
 }

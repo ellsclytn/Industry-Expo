@@ -7,6 +7,10 @@ $(document).ready(function() {
     return false;
   });
 
+  // Open/close menu
+  $('.menu-button').click(function() {
+    $('body').toggleClass('menu-open');
+  });
 });
 
 var map;
