@@ -201,6 +201,7 @@ function initMap() {
       center: location,
       zoom: 15,
       disableDefaultUI: true,
+      scrollwheel: false,
       mapTypeControlOptions: {
         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'grifMap']
       }
