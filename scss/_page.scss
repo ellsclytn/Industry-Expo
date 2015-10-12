@@ -139,6 +139,7 @@ section.map {
       height: 75%;
       top: 0;
       left: 0;
+      pointer-events: none;
       @include background-image(linear-gradient($white, rgba(255,255,255,0)));
 
       @media (min-width: $media-md) {
