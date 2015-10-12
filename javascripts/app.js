@@ -1,9 +1,24 @@
 $(document).ready(function () {
 
-  // Masthead 'what's this about?' button
-  $('.flex-item.button').click(function () {
-    // TODO: Scroll to section
+  // Make internal anchor links smooth scroll to location
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 
+  // Masthead 'what's this about?' button scroll to about section
+  $('.flex-item.button').click(function () {
+    $('html,body').animate({
+      scrollTop: $('[name=about').offset().top
+    }, 1000);
     return false;
   });
 
@@ -11,6 +26,23 @@ $(document).ready(function () {
   $('.menu-button, .site-overlay').click(function () {
     $('body').toggleClass('menu-open');
   });
+
+  // show back to top button after scrolling 600px on desktops
+  var scrolled = false;
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 600) {
+      if (scrolled === false) {
+        $('.back-to-top').addClass('show');
+      }
+      scrolled = true;
+    } else {
+      if (scrolled === true) {
+        $('.back-to-top').removeClass('show');
+      }
+      scrolled = false;
+    }
+  });
+
 });
 
 var map;
@@ -163,4 +195,3 @@ function initMap() {
     marker.setMap(map);
   }
 }
-
