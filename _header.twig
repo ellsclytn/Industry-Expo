@@ -6,10 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#C02424">
   <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %} {{ app.config.get('general/sitename') }}</title>
+  <meta name="description" content="{{ app.config.get('general/payoff') }}" />
+
+  {# Fonts + Syles #}
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Source+Sans+Pro:400,700,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
   <link rel="stylesheet" href="{{ paths.theme }}css/importer.css">
+
+  {# Social Media #}
+
+  {# Twitter Card data #}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@GriffithITProj">
+  <meta name="twitter:title" content="{% if record.title is defined %}{{ record.title|striptags }} | {% endif %} {{ app.config.get('general/sitename') }}">
+  <meta name="twitter:description" content="{{ app.config.get('general/payoff') }}">
+  <meta name="twitter:creator" content="@GriffithITProj">
+  {# Twitter Summary card images must be at least 120x120px #}
+  <meta name="twitter:image" content="{{ paths.hosturl }}{{ paths.theme }}images/opengraph.jpg">
+
+  {# Open Graph data #}
+  <meta property="og:title" content="{% if record.title is defined %}{{ record.title|striptags }} | {% endif %} {{ app.config.get('general/sitename') }}" />
+  <meta property="og:type" content="website" />
+  <meta property="fb:profile_id" content="428189720699759" />
+  <meta property="og:url" content="{{ paths.currenturl }}" />
+  <meta property="og:image" content="{{ paths.hosturl }}{{ paths.theme }}images/opengraph.jpg" />
+  <meta property="og:description" content="{{ app.config.get('general/payoff') }}" />
+  <meta property="og:site_name" content="{{ app.config.get('general/sitename') }}" />
 </head>
 
 <body>
