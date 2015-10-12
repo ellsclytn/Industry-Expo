@@ -8,8 +8,8 @@ module.exports = function(grunt) {
       //       /path/to/Bolt/theme/industry-expo.
       boltConfig: {
         expand: true,
-        cwd: 'bolt-config/',
-        src: '*.yml',
+        cwd: 'bolt-config',
+        src: '**/*.yml',
         dest: '../../app/config/',
       },
     },
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
         files: 'scss/**/*.scss',
         tasks: ['compass']
       },
-      boltMenuSetup: {
-        files: 'bolt-config/*.yml',
+      boltConfig: {
+        files: 'bolt-config/**/*.yml',
         tasks: ['copy:boltConfig']
       }
     },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
     // Browser Sync task to automatically refresh the page on any changes that affect appearance.
     browserSync: {
       bsFiles: {
-        src: ['css/*.css', '*.twig', '../../app/config/*.yml']
+        src: ['css/*.css', '*.twig', '../../app/config/**/*.yml']
       },
       options: {
         watchTask: true,
