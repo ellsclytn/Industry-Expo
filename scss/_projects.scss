@@ -45,7 +45,7 @@
     height: 50%;
     bottom: 0;
     left: 0;
-    @include background-image(linear-gradient(rgba(255,255,255,0), $black));
+    @include background-image(linear-gradient(transparentize($black, 1), $black));
   }
 }
 
