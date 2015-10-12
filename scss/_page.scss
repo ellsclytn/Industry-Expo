@@ -169,6 +169,10 @@ section.contact {
 
   @media (min-width: $media-md) {
     text-align: center;
+
+    .contact-description {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -182,6 +186,16 @@ div[class^="boltform"] {
     padding: 20px;
     margin-bottom: 20px;
     border: 2px solid $offwhite;
+    @include transition-property(border-color );
+    @include transition-duration(0.1s);
+    @include transition-timing-function(ease-in-out);
+    @include input-placeholder {
+      @include transition(color 0.1s ease-in-out);
+    }
+  }
+  
+  textarea {
+    resize: vertical;
   }
 
   textarea:focus,
