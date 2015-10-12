@@ -140,8 +140,87 @@ section.map {
     margin: 0;
   }
 }
+.contact_submit{
+  text-align: center;
+  margin: 0 auto; 
+}
 
 section.contact {
   padding: 100px 0;
   text-align: center;
+
 }
+
+.boltforms-row{
+  padding: 0.5em;
+}
+
+.boltforms-row input, textarea{
+  float: center;
+  width: 60%;
+}
+
+input:focus, textarea:focus {
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 2px solid $red;
+  outline-width: 0;
+}
+
+textarea:focus::-webkit-input-placeholder{
+    color: $red;
+}
+
+textarea:textarea:focus:-webkit-textarea-placeholder{
+  color: $red;
+}
+
+.required{
+  display: none;
+}
+
+/* Firefox > 19 */
+
+textarea:focus::-moz-placeholder{
+    color: $red;
+}
+
+/* Internet Explorer 10 */
+textarea:focus:-ms-input-placeholder {
+    color: $red;
+}
+input, input:focus{
+   line-height: 3em;
+   padding-left: 1em;
+}
+
+textarea, textarea:focus{
+   line-height: 1.5em;
+   padding-left: 1em;
+}
+
+input:focus::-webkit-input-placeholder{
+    color: $red;
+}
+
+
+/* Firefox > 19 */
+
+input:focus::-moz-placeholder{
+    color: $red;
+}
+
+textarea:focus:-moz-placeholder{
+    color: $red;
+}
+
+/* Internet Explorer 10 */
+input:focus:-ms-input-placeholder {
+    color: $red;
+}
+
+div.g-recaptcha {
+    text-align: center;
+    width: 27%;
+    margin: 0 auto; 
+} 
