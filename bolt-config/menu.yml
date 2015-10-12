@@ -9,7 +9,7 @@ main:
       link: '#about'
     - label: Projects
       title: 2015 Projects
-      path: pages/
+      path: projects/
     - label: Location
       title: Title of location section
       link: '#location'
