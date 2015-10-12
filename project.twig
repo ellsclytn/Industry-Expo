@@ -1,0 +1,11 @@
+{% include '_header.twig' %}
+<div class="pure-g" role="content">
+  <article class="pure-u-1">
+    <h1>{{ project.project_name }}</h1>
+    <h1>{{ project.team_name }}</h1>
+    <img src="{{ image(project.team_photo) }}" />
+  </article>
+  <hr>
+</div>
+<!-- End Main Content and Sidebar -->
+{% include '_footer.twig' %}
