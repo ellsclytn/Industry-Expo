@@ -1,0 +1,56 @@
+{% include '_header.twig' %}
+<section class="masthead-projects">
+  <div class="container">
+    {# TODO: This needs to be dynamic somehow eventually #}
+    <h2>2015 Projects</h2>
+  </div>
+</section>
+<div class="container">
+  <div class="pure-g">
+    {# second column: odd #}
+    <div class="pure-u-1 pure-u-md-1-2">
+    {% for project in records %}
+      {% if (loop.index is odd) %}
+        <article class="project">
+          <div class="image-wrapper">
+            <p class="team-name">{{ project.team_name }}</p>
+            <img src="{{ image(project.team_photo) }}">
+            <div class="project-details">
+              <h4>{{ project.project_name }}</h4>
+              <p>{{ project.client }}</p>
+            </div>
+          </div>
+          <div class="project-summary">
+            {{ project.summary }}
+            <a href="{{ project.link }}" class="button">View Project</a>
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+    </div>
+    {# second column: even #}
+    <div class="pure-u-1 pure-u-md-1-2">
+    {% for project in records %}
+      {% if (loop.index is even) %}
+        <article class="project">
+          <div class="image-wrapper">
+            <p class="team-name">{{ project.team_name }}</p>
+            <img src="{{ image(project.team_photo) }}">
+            <div class="project-details">
+              <h4>{{ project.project_name }}</h4>
+              <p>{{ project.client }}</p>
+            </div>
+          </div>
+          <div class="project-summary">
+            {{ project.summary }}
+            <a href="{{ project.link }}" class="button">View Project</a>
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    {{ pager() }}
+  </div>
+</div>
+{% include '_footer.twig' %}

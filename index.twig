@@ -15,7 +15,7 @@
       </div>
     </section>
 
-    <a id="#about" name="about"></a>
+    <a name="about"></a>
     <section class="about">
       <div class="container">
         <h2>{{ home.templatefields.about_intro }}</h2>
@@ -52,7 +52,7 @@
       </div>
     </section>
 
-
+    <a name="location"></a>
     <section class="location">
       <div class="container">
         <h2>{{ home.templatefields.location_title }}</h2>
@@ -83,9 +83,7 @@
     </section>
 
     <section class="map">
-
-      {# TODO: Google custom map #}
-
+      <div id="map-canvas"></div>
       <div class="address">
         <div class="container">
           <p>{{ home.templatefields.address }}</p>
@@ -93,6 +91,7 @@
       </div>
     </section>
 
+    <a name="contact"></a>
     <section class="contact">
       <div class="container">
         <div class="pure-g">

@@ -2,7 +2,7 @@
   background-color: $black;
   padding: 60px 0;
 
-  @media (min-width: $media-sm) {
+  @media (min-width: $media-md) {
     text-align: center;
   }
 }
@@ -17,13 +17,16 @@
   padding: 100px 0;
   background-color: $red;
 
-  @media (min-width: $media-sm) {
+  @media (min-width: $media-md) {
     text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   p {
     color: $white;
-    margin-bottom: 0;
   }
 
   .fa {
@@ -58,6 +61,7 @@
 
 .footer-credit {
   background-color: darken($black, 3%);
+  padding-bottom: 80px;
 }
 
 .footer-page-list {
@@ -69,7 +73,7 @@
     display: inline-block;
     margin-right: 20px;
 
-    @media (min-width: $media-sm) {
+    @media (min-width: $media-md) {
       margin: 0 40px;
     }
   }
@@ -89,14 +93,8 @@
   font-size: ms(-1);
 }
 
-.copyright {
-  @media (min-width: $media-sm) {
-    text-align: left;
-  }
-}
-
 .credit {
-  @media (min-width: $media-sm) {
+  @media (min-width: $media-md) {
     text-align: right;
   }
 

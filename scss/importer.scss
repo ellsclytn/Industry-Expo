@@ -2,8 +2,12 @@
 @import "modular-scale";
 
 // Compass
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 @import "compass/css3/flexbox";
+@import "compass/css3/images";
 @import "compass/css3/selection";
+@import "compass/css3/transform";
 @import "compass/css3/transition";
 @import "compass/css3/user-interface";
 
@@ -14,4 +18,5 @@
 @import "_menu";
 @import "_footer";
 @import "_button";
+@import "_projects";
 @import "_page";

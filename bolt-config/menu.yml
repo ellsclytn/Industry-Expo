@@ -6,12 +6,12 @@ main:
       path: homepage
     - label: About
       title: Title of about section
-      link: '#about'
+      link: '/#about'
     - label: Projects
       title: 2015 Projects
-      path: pages/
+      path: projects/
     - label: Location
       title: Title of location section
-      link: '#location'
+      link: '/#location'
     - label: Contact
-      link: '#contact'
+      link: '/#contact'

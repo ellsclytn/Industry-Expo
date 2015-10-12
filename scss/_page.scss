@@ -71,7 +71,6 @@ section.masthead {
     min-width: 270px;
     background-color: transparentize($blue, 0.2);
     cursor: pointer;
-    position: relative;
 
     &:hover,
     &:active,
@@ -118,12 +117,36 @@ section.location {
 }
 
 section.map {
-  // TODO: This sets a min height for demo purposes. Remove when custom google map implemented.
-  min-height: 400px;
-
   width: 100%;
   background-color: $blue;
   position: relative;
+
+  #map-canvas {
+    position: relative;
+    height: 300px;
+
+    @media (min-width: $media-md) {
+      height: 500px;
+    }
+
+    // Gradient overlay for map
+    &::before {
+      display: none;
+      content: "";
+      z-index: 10;
+      position: absolute;
+      width: 100%;
+      height: 75%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      @include background-image(linear-gradient($white, rgba(255,255,255,0)));
+
+      @media (min-width: $media-md) {
+        display: block;
+      }
+    }
+  }
 
   .address {
     position: absolute;
@@ -143,7 +166,10 @@ section.map {
 
 section.contact {
   padding: 100px 0;
-  text-align: center;
+
+  @media (min-width: $media-md) {
+    text-align: center;
+  }
 }
 
 // Match all boltforms form elements
