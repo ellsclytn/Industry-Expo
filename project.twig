@@ -1,11 +1,18 @@
 {% include '_header.twig' %}
-<div class="pure-g" role="content">
-  <article class="pure-u-1">
+<div class="container" role="content">
+  <article class="project">
     <h1>{{ project.project_name }}</h1>
-    <h1>{{ project.team_name }}</h1>
-    <img src="{{ image(project.team_photo) }}" />
+    <img class="team-image" src="{{ image(project.team_photo) }}" />
+    <h2>By {{ project.team_name }} for {{ project.client }}</h2>
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <h3>The Team</h3>
+        {{ project.team_description }}
+        <h3>The Project</h3>
+        {{ project.description }}
+      </div>
+    </div>
   </article>
-  <hr>
 </div>
 <!-- End Main Content and Sidebar -->
 {% include '_footer.twig' %}
