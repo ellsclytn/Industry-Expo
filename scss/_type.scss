@@ -49,7 +49,8 @@ h6 { font-size: ms(0); }
 .masthead h2 { font-size: ms(0); }
 .about p,
 .location > .container > p,
-.contact p  { font-size: ms(0); }
+.contact p,
+.project .summary  { font-size: ms(0); }
 .details-icon { font-size: ms(6); }
 .button-projects { font-size: ms(1); }
 .team-name { font-size: ms(0); }
@@ -66,7 +67,8 @@ h6 { font-size: ms(0); }
   .masthead h2 { font-size: ms(1); }
   .about p,
   .location > .container > p,
-  .contact p { font-size: ms(1); }
+  .contact p,
+  .project .summary { font-size: ms(1); }
   .button-projects { font-size: ms(2); }
   .team-name { font-size: ms(1); }
 }

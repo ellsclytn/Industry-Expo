@@ -54,7 +54,7 @@ projects:
             type: text
             group: Fields
         summary:
-            type: html
+            type: text
             group: Fields
         description:
             type: html
