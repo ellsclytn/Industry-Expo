@@ -1,0 +1,121 @@
+###
+### Bolt Forms
+###
+
+# Global templates used for rendering forms and emails.
+templates:
+  form: boltforms_form.twig
+  email: boltforms_email.twig
+  subject: boltforms_email_subject.twig
+  files: boltforms_file_browser.twig
+
+# reCAPTCHa set up
+recaptcha:
+  enabled: true
+  label: false
+  public_key: 'RECAPTCHA_PUBLIC'
+  private_key: 'RECAPTCHA_PRIVATE'
+  error_message: "The CAPTCHA wasn't entered correctly. Please try again."
+  theme: clean
+
+
+## CSRF protection
+#
+# Enable CSRF protection for forms. You should leave this set to 'true', unless
+# you know what you're doing.
+csrf: true
+
+## File Uploads
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECURITY WARNING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+# Handling file uploads is a very common attack vector used to compromise (hack)
+# a server.
+#
+# BoltForms does a few things to help increase slightly the security of handling
+# file uploads.
+#
+# Firstly, the directory that you specify for "base_directory" below should NOT
+# be an route accessible to the outside world. We provide a special route should
+# you wish to make the files browsable after upload.
+#
+# Secondly, is the "filename_handling" parameter. If an attacker knows the
+# uploaded file name, this can make their job a bit easier. So we provide three
+# options, e.g. uploading the file kitten.jpg:
+#
+# -------------------------------------
+# | Setting | Resulting file name     |
+# |-----------------------------------|
+# | prefix  | kitten.Ze1d352rrI3p.jpg |
+# | suffix  | kitten.jpg.Ze1d352rrI3p |
+# | keep    | kitten.jpg              |
+# -------------------------------------
+#
+# We recommend "suffix" as this is the most secure, alternatively "prefix" will
+# aid in file browsing. However "keep" should always be used with caution!
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECURITY WARNING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+uploads:
+  enabled: false                                 # The global on/off switch for upload handling
+  base_directory: /full/path/for/uploaded/files/ # Outside web root and writable by the web server's user
+  filename_handling: suffix                      # Can be either "prefix", "suffix", or "keep"
+  management_controller: false                   # Enable a controller to handle browsing and downloading of uploaded files
+
+## Debugging
+#
+# Global debugging on/off switch
+#
+# If enabled, ALL forms will go into debug mode.  However, when disabled an individual
+# form can still enable it's own debug — specific for and to that form
+debug:
+  enabled: false
+  address: s2893193@griffithuni.edu.au
+
+# Contact Form
+# TODO: SMTP Details
+contact:
+  notification:
+    enabled: true
+    debug: false
+    subject: Your message was submitted
+    from_name: Griffith Expo                   # A field name, specified in the fields: section below
+    from_email: s2893193@griffithuni.edu.au    # A field name, specified in the fields: section below
+    replyto_name: name                         # A field name, specified in the fields: section below
+    replyto_email: email                       # A field name, specified in the fields: section below
+    to_name: Griffith ICT Expo                 # Must be valid text
+    to_email: s2893193@griffithuni.edu.au      # Must be valid email address
+    attach_files: false
+  feedback:
+    success: Message submission sucessful
+    error: There are errors in the form, please fix before trying to resubmit
+  fields:
+    name:
+      type: text
+      options:
+        required: true
+        label: false
+        attr:
+          placeholder: Name
+        constraints: [ NotBlank, {Length: {'min': 3}} ]
+    email:
+      type: email
+      options:
+        required: true
+        label: false
+        attr:
+          placeholder: Email Address
+        constraints: [ NotBlank, Email ]
+    message:
+      type: textarea
+      options:
+        required: true
+        label: false
+        attr:
+          placeholder: Your message
+          rows: 6
+    submit:
+      type: submit
+      options:
+        attr:
+          class: button-submit
