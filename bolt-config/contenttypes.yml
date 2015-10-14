@@ -65,11 +65,6 @@ projects:
         team_photo:
             type: image
             group: media
-    relations:
-        pages:
-          multiple: false
-          order: -project
-          label: Select a project
     taxonomy: [ categories ]
     record_template: project.twig
     listing_template: projects.twig
