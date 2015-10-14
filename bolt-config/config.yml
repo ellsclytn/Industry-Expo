@@ -33,7 +33,7 @@ theme: industry-expo
 # This can be done as [nl_NL, Dutch_Netherlands] when specifying multiple
 # locales, ensure the first is a standard locale.
 locale: en_GB
-#timezone: UTC
+timezone: Australia/Brisbane
 
 # Set maintenance mode on or off.
 #
