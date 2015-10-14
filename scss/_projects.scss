@@ -90,24 +90,24 @@
  */
 
 .project-title-bar {
+  background-image: url("/theme/industry-expo/images/project-listing.jpg");
+  background-size: cover;
+  background-position: 50% 0;
   text-align: center;
   padding: 60px 0;
-  background-color: $blue;
 
-  h1 {
+  h2 {
     display: inline-block;
     margin: 0;
     padding: 40px 20px;
-    background-color: transparentize($red, 0.2);
+    background-color: transparentize($blue, 0.2);
+
     color: $white;
   }
 }
 
 .project {
-
-  .summary {
-    margin: 60px 0;
-  }
+  margin-bottom: 60px;
 
   img {
     width: 100%;
