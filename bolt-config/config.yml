@@ -6,8 +6,11 @@
 #
 # If you're trying out Bolt, just keep it set to SQLite for now.
 database:
-    driver: sqlite
-    databasename: bolt
+  driver: mysql
+  username: DB_USERNAME
+  password: DB_PASSWORD
+  databasename: DB_NAME
+  host: mysql.ict.griffith.edu.au
 
 # The name of the website
 sitename: ICT Industry Expo
@@ -276,7 +279,7 @@ strict_variables: false
 # enable them for your editors, please instruct them thoroughly on their
 # responsibility not to break the layout.
 wysiwyg:
-    images: false            # Allow users to insert images in the content.
+    images: true             # Allow users to insert images in the content.
     anchor: false            # Adds a button to create internal anchors to link to.
     tables: false            # Adds a button to insert and modify tables in the content.
     fontcolor: false         # Allow users to mess around with font coloring.
@@ -313,9 +316,9 @@ liveeditor: true
 mailoptions:
     transport: smtp
     spool: true
-    host: localhost
-    username: username
-    password: password
+    host: smtp.griffith.edu.au
+    username:
+    password:
     port: 25
     encryption: null
     auth_mode: null

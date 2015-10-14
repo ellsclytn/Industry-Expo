@@ -70,7 +70,7 @@ uploads:
 # form can still enable it's own debug — specific for and to that form
 debug:
   enabled: false
-  address: s2893193@griffithuni.edu.au
+  address: l.carter@griffith.edu.au
 
 # Contact Form
 # TODO: SMTP Details
@@ -78,13 +78,13 @@ contact:
   notification:
     enabled: true
     debug: false
-    subject: Your message was submitted
+    subject: ICT Project Expo Webform Enquiry
     from_name: Griffith Expo                   # A field name, specified in the fields: section below
-    from_email: s2893193@griffithuni.edu.au    # A field name, specified in the fields: section below
-    replyto_name: name                         # A field name, specified in the fields: section below
-    replyto_email: email                       # A field name, specified in the fields: section below
+    from_email: noreply@griffith.edu.au        # A field name, specified in the fields: section below
+    replyto_name: ICT Expo                     # A field name, specified in the fields: section below
+    replyto_email: noreply@griffith.edu.au     # A field name, specified in the fields: section below
     to_name: Griffith ICT Expo                 # Must be valid text
-    to_email: s2893193@griffithuni.edu.au      # Must be valid email address
+    to_email: l.carter@griffith.edu.au         # Must be valid email address
     attach_files: false
   feedback:
     success: Message submission sucessful

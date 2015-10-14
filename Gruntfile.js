@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           to: secret.google.recaptcha_private
         }]
       },
-      dist: {
+      dist_recaptcha: {
         src: 'bolt-config/extensions/boltforms.bolt.yml',
         dest: 'UPLOAD_TO_CONFIG/extensions/',
         replacements: [{
@@ -45,6 +45,22 @@ module.exports = function(grunt) {
         {
           from: 'RECAPTCHA_PRIVATE',
           to: secret.google.recaptcha_private
+        }]
+      },
+      dist_main: {
+        src: 'bolt-config/config.yml',
+        dest: 'UPLOAD_TO_CONFIG/',
+        replacements: [{
+          from: 'DB_USERNAME',
+          to: secret.database.username
+        },
+        {
+          from: 'DB_PASSWORD',
+          to: secret.database.password
+        },
+        {
+          from: 'DB_NAME',
+          to: secret.database.name
         }]
       }
     },
@@ -93,6 +109,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
 
   // Register Tasks
-  grunt.registerTask('build', ['compass', 'copy:dist', 'replace:dist']);
+  grunt.registerTask('build', ['compass', 'copy:dist', 'replace:dist_recaptcha', 'replace:dist_main']);
   grunt.registerTask('default', ['compass', 'copy:dev', 'replace:dev', 'browserSync', 'watch']);
 }
