@@ -94,12 +94,19 @@
     <a name="contact"></a>
     <section class="contact">
       <div class="container">
+        <div class="pure-g contact-description">
+          {# Offset col #}
+          <div class="pure-u-1 pure-u-md-1-8"></div>
+          <div class="pure-u-1 pure-u-md-3-4">
+            <h2>{{ home.templatefields.contact_title }}</h2>
+            {{ home.templatefields.contact_description }}
+          </div>
+        </div>
         <div class="pure-g">
           {# Offset col #}
           <div class="pure-u-1 pure-u-md-1-4"></div>
-          <div class="pure-u-1 pure-u-md-6-8">
-            <h2>{{ home.templatefields.contact_title }}</h2>
-            {{ home.templatefields.contact_description }}
+          <div class="pure-u-1 pure-u-md-1-2">
+            {{ boltforms('contact') }}
           </div>
         </div>
       </div>

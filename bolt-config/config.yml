@@ -310,17 +310,17 @@ liveeditor: true
 # Protip: If your webhost does not support SMTP, sign up for a (free) Mandrill
 # account at https://mandrill.com/ for sending emails reliably.
 
-# mailoptions:
-#     transport: smtp
-#     spool: true
-#     host: localhost
-#     username: username
-#     password: password
-#     port: 25
-#     encryption: null
-#     auth_mode: null
-#     senderMail: null
-#     senderName: null
+mailoptions:
+    transport: smtp
+    spool: true
+    host: localhost
+    username: username
+    password: password
+    port: 25
+    encryption: null
+    auth_mode: null
+    senderMail: null
+    senderName: null
 
 # mailoptions:
 #     transport: mail

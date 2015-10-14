@@ -4,3 +4,5 @@ css
 npm-debug.log
 .sass-cache/
 .DS_Store
+secrets.json
+UPLOAD_TO_CONFIG

@@ -1,17 +1,52 @@
 module.exports = function(grunt) {
+  var secret = grunt.file.readJSON('secrets.json');
+  var devBoltDirectory = "../../";
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     // Copying files to places!
     copy: {
-      // NOTE: This task will only work if you run grunt from inside the theme directory which should be under
-      //       /path/to/Bolt/theme/industry-expo.
-      boltConfig: {
+      dev: {
         expand: true,
-        cwd: 'bolt-config/',
-        src: '*.yml',
-        dest: '../../app/config/',
+        cwd: 'bolt-config',
+        src: '**/*.yml',
+        dest: devBoltDirectory + 'app/config/',
       },
+      dist: {
+        expand: true,
+        cwd: 'bolt-config',
+        src: '**/*.yml',
+        dest: 'UPLOAD_TO_CONFIG',
+      }
+    },
+
+    // NOTE: Must run AFTER copy tasks
+    replace: {
+      dev: {
+        src: 'bolt-config/extensions/boltforms.bolt.yml',
+        dest: devBoltDirectory + 'app/config/extensions/',
+        replacements: [{
+          from: 'RECAPTCHA_PUBLIC',
+          to: secret.google.recaptcha_public
+        },
+        {
+          from: 'RECAPTCHA_PRIVATE',
+          to: secret.google.recaptcha_private
+        }]
+      },
+      dist: {
+        src: 'bolt-config/extensions/boltforms.bolt.yml',
+        dest: 'UPLOAD_TO_CONFIG/extensions/',
+        replacements: [{
+          from: 'RECAPTCHA_PUBLIC',
+          to: secret.google.recaptcha_public
+        },
+        {
+          from: 'RECAPTCHA_PRIVATE',
+          to: secret.google.recaptcha_private
+        }]
+      }
     },
 
     // Compile Sass with compass into css/ directory
@@ -32,16 +67,16 @@ module.exports = function(grunt) {
         files: 'scss/**/*.scss',
         tasks: ['compass']
       },
-      boltMenuSetup: {
-        files: 'bolt-config/*.yml',
-        tasks: ['copy:boltConfig']
+      boltConfig: {
+        files: 'bolt-config/**/*.yml',
+        tasks: ['copy:dev']
       }
     },
 
     // Browser Sync task to automatically refresh the page on any changes that affect appearance.
     browserSync: {
       bsFiles: {
-        src: ['javascripts/*.js', 'css/*.css', '*.twig', '../../app/config/*.yml']
+        src: ['javascripts/*.js', 'css/*.css', '*.twig', '../../app/config/**/*.yml']
       },
       options: {
         watchTask: true,
@@ -55,8 +90,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   // Register Tasks
-  grunt.registerTask('build', ['compass', 'copy']);
-  grunt.registerTask('default', ['build', 'browserSync', 'watch']);
+  grunt.registerTask('build', ['compass', 'copy:dist', 'replace:dist']);
+  grunt.registerTask('default', ['compass', 'copy:dev', 'replace:dev', 'browserSync', 'watch']);
 }
