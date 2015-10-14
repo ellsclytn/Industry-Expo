@@ -1,19 +1,22 @@
+/*
+ * Listing
+ */
 .masthead-projects {
-  background-image: url("/theme/industry-expo/images/masthead.jpg");
+  background-image: url("/theme/industry-expo/images/projects.jpg");
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 50% 0;
   padding: 60px 0;
 
   h2 {
     display: inline-block;
     margin: 0;
     padding: 40px 20px;
-    background-color: transparentize($red, 0.2);
+    background-color: transparentize($blue, 0.2);
     color: $white;
   }
 }
 
-.project {
+.project-listing {
   border: 1px solid $offwhite;
   margin: 40px 0;
   @include box-shadow(0px 2px 5px transparentize($black, 0.8));
@@ -79,5 +82,34 @@
   .button {
     display: block;
     text-align: center;
+  }
+}
+
+/*
+ * Feature
+ */
+
+.project-title-bar {
+  background-image: url("/theme/industry-expo/images/project-listing.jpg");
+  background-size: cover;
+  background-position: 50% 0;
+  text-align: center;
+  padding: 60px 0;
+
+  h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: transparentize($blue, 0.2);
+
+    color: $white;
+  }
+}
+
+.project {
+  margin-bottom: 60px;
+
+  img {
+    width: 100%;
   }
 }

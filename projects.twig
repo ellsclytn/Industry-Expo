@@ -11,7 +11,7 @@
     <div class="pure-u-1 pure-u-md-1-2">
     {% for project in records %}
       {% if (loop.index is odd) %}
-        <article class="project">
+        <article class="project-listing">
           <div class="image-wrapper">
             <p class="team-name">{{ project.team_name }}</p>
             <img src="{{ image(project.team_photo) }}">
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="project-summary">
-            {{ project.summary }}
+            <p>{{ project.summary }}</p>
             <a href="{{ project.link }}" class="button">View Project</a>
           </div>
         </article>
@@ -32,7 +32,7 @@
     <div class="pure-u-1 pure-u-md-1-2">
     {% for project in records %}
       {% if (loop.index is even) %}
-        <article class="project">
+        <article class="project-listing">
           <div class="image-wrapper">
             <p class="team-name">{{ project.team_name }}</p>
             <img src="{{ image(project.team_photo) }}">
@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="project-summary">
-            {{ project.summary }}
+            <p>{{ project.summary }}</p>
             <a href="{{ project.link }}" class="button">View Project</a>
           </div>
         </article>
