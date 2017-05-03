@@ -1,5 +1,7 @@
 # Industry Expo Bolt CMS Theme
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ellsclytn/Industry-Expo.svg)](https://greenkeeper.io/)
+
 This is the Industry Project Expo theme for [Bolt CMS](https://bolt.cm), based on the ["base-2014"](https://github.com/bolt/base-2014) theme for Bolt. It is built with [Pure CSS](http://purecss.io) and [Compass](http://compass-style.org).
 
 ## Requirements
